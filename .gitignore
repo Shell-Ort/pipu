@@ -1,0 +1,86 @@
+# ###################
+# Archivos compilados / binarios
+# ###################
+*.class
+*.com
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+*.pyo
+
+# ###################
+# Paquetes comprimidos
+# ###################
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ###################
+# Archivos del sistema operativo
+# ###################
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+Icon?
+._*
+
+# ###################
+# Archivos de log y bases de datos
+# ###################
+*.log
+*.sqlite
+log/**/*
+logs/**/*.log
+
+# ###################
+# Archivos temporales
+# ###################
+tmp/**/*
+*.tmp
+*.temp
+*~
+
+# ###################
+# Directorios de entorno / dependencias
+# ###################
+node_modules/
+vendor/
+.bundle/
+.env
+.venv/
+venv/
+__pycache__/
+.coverage
+.pytest_cache/
+
+# ###################
+# Archivos de configuración del IDE
+# ###################
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# ###################
+# Archivos propios del proyecto (ejemplos)
+# ###################
+# config/database.yml
+# .env.local
+# .env.production
