@@ -76,15 +76,5 @@ func printWithFill(ini string, n int, stat *State) {
 		panic("Error in printing.")
 	}
 
-	var sal strings.Builder
-	sal.WriteString(ini)
-	sal.WriteByte(' ')
-
-	nFill := n
-	sal.WriteString(strings.Repeat(relleno, nFill))
-
-	empty := longitudLinea - nFill
-	sal.WriteString(strings.Repeat(" ", empty))
-
-	stat.Write(sal.String())
+	stat.Write(ini + " " + strings.Repeat(relleno, n) + strings.Repeat(" ", longitudLinea-n))
 }
