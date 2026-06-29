@@ -42,12 +42,10 @@ func printBands(coeffs []complex128, nyquist float64, fftSize int, stat *State) 
 		}
 
 		sum := 0.0
-		count := 0
 		for i := loBin; i <= hiBin; i++ {
 			sum += math.Hypot(real(coeffs[i]), imag(coeffs[i]))
-			count++
 		}
-		avg := sum / float64(count)
+		avg := sum / float64(hiBin-loBin+1)
 		if avg > maxAvg {
 			maxAvg = avg
 		}

@@ -7,6 +7,7 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/ebitengine/oto/v3"
@@ -31,6 +32,17 @@ func main() {
 		)
 		os.Exit(1)
 	}
+
+	if n > 2 {
+		_, _ = fmt.Fprintf(
+			os.Stderr,
+			"Incorrect number of arguments (%d), max 2. Incorrect arguments: [%s]",
+			n,
+			strings.Join(args[2:], ", "),
+		)
+		os.Exit(1)
+	}
+
 	fileName := args[0]
 	if _, err := os.Stat(fileName); err != nil {
 		_, _ = fmt.Fprintf(
@@ -40,16 +52,16 @@ func main() {
 		)
 		os.Exit(1)
 	}
-	var err error
-	if n > 1 {
-		longitudLinea, err = strconv.Atoi(args[1])
-		if err != nil || longitudLinea <= 0 {
+	if n == 2 {
+		lon, err := strconv.Atoi(args[1])
+		if err != nil || lon <= 0 {
 			_, _ = fmt.Fprintln(
 				os.Stderr,
 				"Length of the line must be an int of at least 1.",
 			)
 			os.Exit(1)
 		}
+		longitudLinea = lon
 	}
 
 	stat := NewState()
